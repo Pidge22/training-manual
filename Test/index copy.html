@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Dashboard Template · Bootstrap v5.0</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+
+<link href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.css" rel="stylesheet" integrity="sha384-fXYHeSNHACNh+Ql0Psy1BGpQQ48YxrV496tFDs/TbEpAPWdxIEynp8q+H3CQ/Mih" crossorigin="anonymous">
+<link href="https://cdn.datatables.net/autofill/2.7.0/css/autoFill.bootstrap5.css" rel="stylesheet" integrity="sha384-iLU+Lpuhs/2qQkVMl2MUMr/riiJ12d5BMj+4aVxjYfr73EDPRnxtJYGRdatWWUOB" crossorigin="anonymous">
+<link href="https://cdn.datatables.net/buttons/3.2.2/css/buttons.bootstrap5.css" rel="stylesheet" integrity="sha384-aXrixFlY9n6jLh55LkPxdYZAYmWDgBhw5KSCf+G8llA4+zVwFJmsm16d38/HTn5v" crossorigin="anonymous">
+ 
+
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="AP.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap">
+      <a class="nav-link px-3" href="#">Sign out</a>
+    </div>
+  </div>
+</header>
+
+<!-- <div class="container-fluid">
+  <input type="hidden" id='hiddenUserId' name='hiddenUserId' readOnly />
+  <div class="page-header">
+    <div class="row">
+      <div class="col-sm-2">
+        <select id="filterDivision" name="filterDivision"
+          class="form-control">
+          <option value="040">BethlehemXX</option>
+          <option value="CHI">Chicago</option>
+          <option value="008">Cleveland</option>
+          <option value="010">Erlanger</option>
+          <option value="SPI">Gerald</option>
+          <option value="HEA">Headquarters</option>
+          <option value="028">Memphis</option>
+          <option value="039">Modesto</option>
+          <option value="042">Mt. Pleasant</option>
+          <option value="017">Pendleton</option>
+          <option value="SOU">Springdale</option>
+          <option value="007">Tacoma</option>
+          <option value="WAT">Watertown</option>
+          <option value="012">Yorkville</option>
+        </select>
+      </div>
+
+      <div class='col-md-auto'>
+        <select id="filterstatusId" class="form-control"
+          onchange="loadlaborTransferTable();">
+          <option value="All">All</option>
+          <option value="Entered">Entered</option>
+          <option value="Pending">Pending Approval</option>
+          <option value="Approved">Approved</option>								
+        </select>
+      </div>
+    </div>
+    </div>
+    <div class="spacer5"></div>
+    <div class="page-body">
+    <div class="double-scroll">
+      <table id="apTable" class="table table-hover"
+        style="width: 100%">
+        <thead>
+          <tr>
+            <th>Control<br>Number</th>										
+            <th>From<br>Division</th>
+            <th>From<br>Department</th>
+          
+          </tr>
+        </thead>
+      </table>
+    </div>						
+  </div>
+  <div class="page-footer">
+  <button type="button" id="addTransferBtn"
+      onClick="addNewTransfer();" class="btn btn-outline-success">Add New Transfer</button>
+</div>
+</div> -->
+
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha384-ogycHROOTGA//2Q8YUfjz1Sr7xMOJTUmY2ucsPVuXAg4CtpgQJQzGZsX768KqetU" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/2.2.2/js/dataTables.js" integrity="sha384-gGekiWQ/bm8p71RTsvhPShoIBxcf8BsVjRTi0WY8FvxuQa2nKS0PKHiSXV9nfW/A" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/2.2.2/js/dataTables.bootstrap5.js" integrity="sha384-2IrcDZstSOMFTMxGhnJHQtNpSfUopdFXCOaDviGVHw/kuF34fSSaVqL20jnkJctu" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/autofill/2.7.0/js/dataTables.autoFill.js" integrity="sha384-Hqm49aLiA7IW7IPBRSxXYYugu+iqr9dxW0tENVgHSDwciKBEJcx//kMP8npfVlhZ" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/autofill/2.7.0/js/autoFill.bootstrap5.js" integrity="sha384-poUtuB1Np0Qds/Ngb8N8TZ93abt4PC/ZYE8KWlytUxC01wFO9mpU0w2ZyJQaHNR6" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/buttons/3.2.2/js/dataTables.buttons.js" integrity="sha384-wCLG3FbyFPnMZM65D+pam9KW+2joK88dh4jfSMK0OuMQ2cBQHV0t55OqmQduaQ1S" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/buttons/3.2.2/js/buttons.bootstrap5.js" integrity="sha384-yLTXNuasglzZXWjgn0gac6fzvHP2KJ8n49mkOhmzp6rGhK41By8gXi3+/Ms+KOli" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/buttons/3.2.2/js/buttons.html5.js" integrity="sha384-r5RumiuQhALaYWd8i8v0DxCjEXRayyj6nl1wP379+GexLAvE4yuLNoyPEvE6hzDu" crossorigin="anonymous"></script>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="AP.js"></script>
+  </body>
+</html>
+<script>
+  Load();
+</script>
